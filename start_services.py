@@ -245,4 +245,7 @@ def main():
     start_local_ai(args.profile, args.environment)
 
 if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        # If no arguments provided, default to gpu-nvidia
+        sys.argv.extend(['--profile', 'gpu-nvidia'])
     main()
